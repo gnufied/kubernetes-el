@@ -66,7 +66,16 @@ window state."
              (kubernetes-ast-eval (kubernetes--overview-render (kubernetes-state)))))
 
           ;; Force the section at point to highlight.
-          (magit-section-update-highlight))))))
+          (kubernetes--update-section-highlight))))))
+
+(defun kubernetes--update-section-highlight (&optional force)
+  "Update Magit section highlighting when point or region is on a section.
+
+Magit 4.5 assumes `magit-section-update-highlight' is only called when
+there is a section at point or the active region contains sections."
+  (when (or (magit-current-section)
+            (magit-region-sections))
+    (magit-section-update-highlight force)))
 
 (defun kubernetes--message (format &rest args)
   "Call `message' with FORMAT and ARGS.

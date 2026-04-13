@@ -53,7 +53,7 @@
            (kubernetes-ast-eval `(labelled-pods-list ,(kubernetes-state)))))
 
         ;; Force the section at point to highlight.
-        (magit-section-update-highlight)))))
+        (kubernetes--update-section-highlight)))))
 
 (defun kubernetes-labels--initialize-buffer ()
   "Called the first time the labels buffer is opened to set up the buffer."

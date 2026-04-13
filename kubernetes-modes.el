@@ -2,6 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
+(require 'kubernetes-core)
 (require 'magit-section)
 (require 'subr-x)
 
@@ -89,7 +90,7 @@
   (push (cons 'keymap t) text-property-default-nonsticky)
   (push (cons 'kubernetes-nav t) text-property-default-nonsticky)
   (push (cons 'kubernetes-copy t) text-property-default-nonsticky)
-  (add-hook 'post-command-hook #'magit-section-update-highlight t t)
+  (add-hook 'post-command-hook #'kubernetes--update-section-highlight t t)
   (when (bound-and-true-p global-linum-mode)
     (linum-mode -1))
   (when (and (fboundp 'nlinum-mode)
