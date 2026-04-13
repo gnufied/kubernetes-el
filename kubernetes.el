@@ -32,6 +32,7 @@
 
 ;;; Code:
 
+(require 'kubernetes-apply)
 (require 'kubernetes-commands)
 (require 'kubernetes-labels)
 (require 'kubernetes-logs)

@@ -54,6 +54,7 @@ If disabling the proxy, ARGS is ignored."
     ("u" "Unmark" kubernetes-unmark)
     ("U" "Unmark (all)" kubernetes-unmark-all)]
    ["Commands"
+    ("a" "Apply" kubernetes-apply)
     ("d" "Describe" kubernetes-describe)
     ("E" "Edit" kubernetes-edit)
     ("e" "Exec" kubernetes-exec-reset-and-launch)

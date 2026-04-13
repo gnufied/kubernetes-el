@@ -5,6 +5,7 @@
 (require 'magit-section)
 (require 'subr-x)
 
+(autoload 'kubernetes-apply "kubernetes-apply")
 (autoload 'kubernetes-config-popup "kubernetes-popups")
 (autoload 'kubernetes-kill-buffers "kubernetes-commands")
 (autoload 'kubernetes-copy-thing-at-point "kubernetes-commands")
@@ -44,6 +45,7 @@
     (define-key keymap [M-tab]     #'magit-section-cycle-diffs)
     (define-key keymap [S-tab]     #'magit-section-cycle-global)
     ;; Misc
+    (define-key keymap (kbd "a") #'kubernetes-apply)
     (define-key keymap (kbd "q") #'quit-window)
     (define-key keymap (kbd "Q") #'kubernetes-kill-buffers-and-processes)
     (define-key keymap (kbd "RET") #'kubernetes-navigate)
